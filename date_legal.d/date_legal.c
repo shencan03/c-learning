@@ -8,9 +8,9 @@ int main(void){
 
   printf("Dated this ");
   switch (day) {
-    case 1: case 11: case 21: printf("%dth", day); break;
-    case 2: case 12: case 22: printf("%dnd", day); break;
-    case 3: case 13: case 23: printf("%drd", day); break;
+    case 1: case 21: case 31: printf("%dst", day); break;
+    case 2: case 22: printf("%dnd", day); break;
+    case 3: case 23: printf("%drd", day); break;
     default: printf("%dth", day); break;
   } 
   printf(" day of ");
