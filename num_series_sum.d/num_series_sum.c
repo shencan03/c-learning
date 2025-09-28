@@ -1,16 +1,16 @@
 #include <stdio.h>
 
 int main(void) {
-  int n, sum;
+  double n, sum;
 
-  printf("This program sums the series of integers saparated by single spaces (enter 0 to terminate): ");
+  printf("This program sums the series of double values saparated by single spaces (enter 0 to terminate): ");
 
-  scanf("%d", &n);
+  scanf("%lf", &n);
   while (n != 0){
     sum += n;
-    scanf("%d", &n);
+    scanf("%lf", &n);
   } 
-  printf("The sum is: %d", sum);
+  printf("The sum is: %lf", sum);
 
   return 0;
 
