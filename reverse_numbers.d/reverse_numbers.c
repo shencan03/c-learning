@@ -1,16 +1,22 @@
 #include <stdio.h>
-#define N 10
 
 int main(){
-  int i[N];
-  printf("Enter 10 numbers saparated by space: ");
+  int n;
+
+  int a [n];
   
-  for (int k = 0; k < N; k++){
-    scanf("%d", &i[k]);  
+  printf("How many numbers do you want to reverse: ");
+  scanf("%d", &n);
+
+  printf("Enter %d numbers (saparated by single spaces): ", n);
+  for (int i = 0; i < n; i++){
+    scanf("%d", &a[i]);
   }
 
-  for (int k = N - 1; 0 <= k; k--){
-    printf("%d ", i[k]);
+  printf("Numbers reversed:");
+  for (int i = n - 1; 0 <= i; i--){
+    printf(" %d", a[i]);
   }
+
   return 0;
 }
