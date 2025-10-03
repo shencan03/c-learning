@@ -1,30 +1,37 @@
 #include <stdio.h>
 
-int main(void){
-  long num;
-  int digits[10] = {0};
+int main(void) {
+  long digits[10] = {0};
   int digit;
+  printf("Enter numbers saparated by single space (enter 0 in the end): ");
 
-  printf("Enter a number: ");
-  scanf("%ld", &num);
+  long num;
+  for (;;) {
+    scanf("%ld", &num);
+    if (num == 0) {
+      return 0;
+    }
 
-  digit = num % 10;
-  while (num != 0){
-    digits[digit]++;
-    num /= 10;
-    digit = num % 10;
-  }
+    printf("\nNumber %ld\n", num);
+    for (; num != 0;) {
+      digit = num % 10;
+      num /= 10;
+      digits[digit]++;
+    }
 
-  printf("Digit:");
-  printf("%6c", ' ');
-  for (int i = 0; i < (unsigned) (sizeof(digits) / sizeof(digits[0])); i++){
+    printf("Digits: %3c", ' ');
+    for (int i = 0; i < 10; i++) {
       printf("%3d", i);
     }
 
-  printf("\nOccurences: ");
-  for (int i = 0; i < (unsigned) (sizeof(digits) / sizeof(digits[0])); i++){
+    printf("\nOccurences:");
+    for (int i = 0; i < 10; i++) {
       printf("%3ld", digits[i]);
+      digits[i] = 0;
     }
+
+    printf("\n");
+  }
 
   return 0;
 }
