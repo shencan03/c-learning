@@ -1,17 +1,19 @@
 #include <stdio.h>
 
-void decompose(double x, long *int_part, double *frac_part) {
-  *int_part = (long)x;
-  *frac_part = x - *int_part;
-}
+void decompose(double x, int *int_part, double *frac_part);
 
 int main(void) {
-  long i;
+  int int_part;
   double frac;
 
-  decompose(3.15, &i, &frac);
+  decompose(3.14342342, &int_part, &frac);
 
-  printf("whole part(i): %ld, frac part(frac): %lf", i, frac);
+  printf("integer part: %d\nfraction part: %lf", int_part, frac);
 
   return 0;
+}
+
+void decompose(double x, int *int_part, double *frac_part) {
+  *int_part = (long)x;
+  *frac_part = x - *int_part;
 }
